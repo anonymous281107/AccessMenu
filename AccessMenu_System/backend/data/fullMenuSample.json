@@ -1,0 +1,172 @@
+{
+    "items": [
+        {
+            "id": "1E8BC59D-EA7D-40DC-9C6E-1ABD62E0B74A",
+            "name": "Build Your Dream Omelette/Scramble",
+            "price": 10.5,
+            "description": "Choose from Cheddar, Mozzarella, or Feta cheese. Select up to three filling options. Served with a side of breakfast potatoes.",
+            "options": {
+                "cheese": [
+                    "Cheddar",
+                    "Mozzarella",
+                    "Feta"
+                ],
+                "fillings": [
+                    "Tomatoes",
+                    "Spinach",
+                    "Mushrooms",
+                    "Onions",
+                    "Bell Pepper",
+                    "Bacon",
+                    "Turkey Sausage",
+                    "Turkey Bacon"
+                ],
+                "sides": [
+                    "Breakfast Potatoes"
+                ],
+                "dietary_preference": [
+                    "Vegan & Gluten-Free"
+                ]
+            }
+        },
+        {
+            "id": "F7C27F1B-E193-4E7E-9FDD-0CB280CE49A6",
+            "name": "Build Your Dream Vegan Scramble",
+            "price": 8.5,
+            "description": "Scramble tofu base with up to four fillings of your choice. Served with a side of breakfast potatoes.",
+            "options": {
+                "fillings": [
+                    "Tomatoes",
+                    "Spinach",
+                    "Mushrooms",
+                    "Onions",
+                    "Bell Pepper"
+                ],
+                "sides": [
+                    "Breakfast Potatoes"
+                ],
+                "dietary_preference": [
+                    "Vegan"
+                ]
+            }
+        },
+        {
+            "id": "4A0716EB-DB6B-43FC-8DF5-5A474F3CE8FF",
+            "name": "Hangover Scramble",
+            "price": 9.0,
+            "description": "Includes three eggs scrambled with diced turkey sausage, spinach, mushrooms, feta cheese, bell peppers, and onions. Served with a side of breakfast potatoes.",
+            "options": {
+                "ingredients": [
+                    "Eggs",
+                    "Turkey Sausage",
+                    "Spinach",
+                    "Mushrooms",
+                    "Feta Cheese",
+                    "Bell Peppers",
+                    "Onions",
+                    "Breakfast Potatoes"
+                ],
+                "dietary_preference": [
+                    "Gluten-Free"
+                ]
+            }
+        },
+        {
+            "id": "E14C533B-5E5E-44C0-851F-3A31AB79F165",
+            "name": "Breakfast Burrito",
+            "price": 9.0,
+            "description": "Includes three eggs scrambled with turkey bacon, cheddar, breakfast potatoes, sauteed onions, spinach, and avocado, all wrapped in a large tortilla and served with salsa and sour cream.",
+            "options": {
+                "ingredients": [
+                    "Eggs",
+                    "Turkey Bacon",
+                    "Cheddar Cheese",
+                    "Breakfast Potatoes",
+                    "Sauteed Onions",
+                    "Spinach",
+                    "Avocado",
+                    "Tortilla",
+                    "Salsa",
+                    "Sour Cream"
+                ]
+            }
+        },
+        {
+            "id": "5B9B8651-8D2A-4C4B-B75C-5A956A15AD73",
+            "name": "Filling Options",
+            "price": 0,
+            "description": "Additional options for Build Your Dream items.",
+            "options": {
+                "fillings": [
+                    "Tomatoes",
+                    "Spinach",
+                    "Mushrooms",
+                    "Onions",
+                    "Bell Pepper",
+                    "Bacon",
+                    "Turkey Sausage",
+                    "Turkey Bacon",
+                    "Cheddar Cheese",
+                    "Mozzarella Cheese",
+                    "Feta Cheese"
+                ],
+                "extras": {
+                    "avocado": 1.0,
+                    "egg_whites": 1.75
+                }
+            }
+        },
+        {
+            "id": "C28EB8A4-166F-497F-A80B-E1B5672A8E94",
+            "name": "Bethany's Breakfast Sandwich",
+            "price": 9.0,
+            "description": "One egg, sliced cheddar, and ham served between a toasted bagel.",
+            "options": {
+                "ingredients": [
+                    "Egg",
+                    "Cheddar Cheese",
+                    "Ham",
+                    "Toasted Bagel"
+                ]
+            }
+        },
+        {
+            "id": "FA8EFA06-C5F2-41F4-8C31-34A1F05B7FAE",
+            "name": "Vegan Breakfast Burrito",
+            "price": 9.0,
+            "description": "Scrambled tofu, potatoes, sauteed onions, spinach, and avocado wrapped in a large tortilla and served with salsa.",
+            "options": {
+                "ingredients": [
+                    "Scrambled Tofu",
+                    "Potatoes",
+                    "Sauteed Onions",
+                    "Spinach",
+                    "Avocado",
+                    "Tortilla",
+                    "Salsa"
+                ],
+                "dietary_preference": [
+                    "Vegan"
+                ]
+            }
+        },
+        {
+            "id": "7E82F198-045C-4F86-9484-53B1854E2F92",
+            "name": "Farmer's Daughter Sandwich",
+            "price": 7.0,
+            "description": "One egg, spinach, tomato, avocado, and pepper jack cheese served between a toasted bagel.",
+            "options": {
+                "ingredients": [
+                    "Egg",
+                    "Spinach",
+                    "Tomato",
+                    "Avocado",
+                    "Pepper Jack Cheese"
+                ],
+                "dietary_preference": [
+                    "Vegetarian"
+                ]
+            }
+        }
+    ]
+}

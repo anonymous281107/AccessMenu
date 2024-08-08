@@ -1,0 +1,222 @@
+[32mINFO[0m:     [10-03-2024 20:44:19] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component System
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component SqliteDB
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component Posthog
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-03-2024 20:44:19] Starting component SegmentAPI
+[32mINFO[0m:     [10-03-2024 20:44:19] Started server process [[36m54031[0m]
+[32mINFO[0m:     [10-03-2024 20:44:19] Waiting for application startup.
+[32mINFO[0m:     [10-03-2024 20:44:19] Application startup complete.
+[32mINFO[0m:     [10-03-2024 20:44:19] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [10-03-2024 20:46:56] ::1:52021 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:46:56] ::1:52021 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:46:56] ::1:52021 - "GET /api/v1 HTTP/1.1" 200
+[31mERROR[0m:    [10-03-2024 20:47:18] Collection bistro does not exist.
+Traceback (most recent call last):
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/streams/memory.py", line 93, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/streams/memory.py", line 118, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 67, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/starlette/concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/to_thread.py", line 33, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 877, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 807, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/chromadb/server/fastapi/__init__.py", line 310, in get_collection
+    return self._api.get_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/akshaykn/Documents/Official/PhD/HotelMenu/backend/venv/lib/python3.11/site-packages/chromadb/api/segment.py", line 235, in get_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection bistro does not exist.
+[32mINFO[0m:     [10-03-2024 20:47:18] ::1:52121 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [10-03-2024 20:47:26] ::1:52153 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:47:26] ::1:52153 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-03-2024 20:47:26] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [10-03-2024 20:47:26] ::1:52153 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/add HTTP/1.1" 201
+[32mINFO[0m:     [10-03-2024 20:47:34] ::1:52198 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:47:34] ::1:52198 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:47:34] ::1:52198 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:47:34] ::1:52198 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 20:47:34] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 20:47:35] ::1:52198 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:48:33] ::1:52456 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:48:33] ::1:52456 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:48:33] ::1:52456 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:48:33] ::1:52456 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 20:48:33] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 20:48:33] ::1:52456 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:49:27] ::1:52487 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:49:27] ::1:52487 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:49:28] ::1:52487 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 20:49:28] ::1:52487 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 20:49:28] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 20:49:28] ::1:52487 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:03:14] ::1:54600 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:03:14] ::1:54600 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:03:14] ::1:54600 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:03:14] ::1:54600 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 23:03:14] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 23:03:14] ::1:54600 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:04:47] ::1:54662 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:04:47] ::1:54662 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:04:47] ::1:54662 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:07] ::1:54692 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:07] ::1:54692 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:07] ::1:54692 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:07] ::1:54692 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 23:05:07] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 23:05:07] ::1:54692 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:55] ::1:54712 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:55] ::1:54712 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:55] ::1:54712 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:05:55] ::1:54712 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 23:05:56] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 23:05:56] ::1:54712 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:06:33] ::1:54723 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:06:33] ::1:54723 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:06:33] ::1:54723 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:06:33] ::1:54723 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2024 23:06:33] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [10-03-2024 23:06:33] ::1:54723 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2024 23:34:09] Shutting down
+[32mINFO[0m:     [10-03-2024 23:34:09] Waiting for application shutdown.
+[32mINFO[0m:     [10-03-2024 23:34:09] Application shutdown complete.
+[32mINFO[0m:     [10-03-2024 23:34:09] Finished server process [[36m54031[0m]
+[32mINFO[0m:     [03-04-2024 16:19:21] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component System
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component SqliteDB
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component Posthog
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [03-04-2024 16:19:21] Starting component SegmentAPI
+[32mINFO[0m:     [03-04-2024 16:19:21] Started server process [[36m12112[0m]
+[32mINFO[0m:     [03-04-2024 16:19:21] Waiting for application startup.
+[32mINFO[0m:     [03-04-2024 16:19:21] Application startup complete.
+[32mINFO[0m:     [03-04-2024 16:19:21] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [03-04-2024 16:20:33] ::1:57595 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:20:33] ::1:57595 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:20:33] ::1:57595 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:21:24] ::1:57615 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [03-04-2024 16:21:24] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [03-04-2024 16:21:24] ::1:57615 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:21:24] ::1:57615 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:21:24] ::1:57615 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:21:25] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:21:25] ::1:57615 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:06] ::1:57618 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:06] ::1:57618 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:06] ::1:57618 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:06] ::1:57618 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:22:06] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:22:06] ::1:57618 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:25] ::1:57619 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:25] ::1:57619 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:25] ::1:57619 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:22:25] ::1:57619 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:22:25] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:22:25] ::1:57619 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:30] ::1:57630 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:30] ::1:57630 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:30] ::1:57630 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:38] ::1:57638 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:38] ::1:57638 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:38] ::1:57638 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:54] ::1:57644 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:54] ::1:57644 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:54] ::1:57644 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:23:54] ::1:57644 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:23:55] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:23:55] ::1:57644 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:24:18] ::1:57665 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:24:18] ::1:57665 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:24:18] ::1:57665 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:24:18] ::1:57665 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:24:18] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:24:18] ::1:57665 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:01] ::1:57678 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:01] ::1:57678 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:01] ::1:57678 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:06] ::1:57678 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:06] ::1:57678 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:06] ::1:57678 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:06] ::1:57678 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:25:07] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:25:07] ::1:57678 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:34] ::1:57689 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:34] ::1:57689 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:34] ::1:57689 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:45] ::1:57707 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:45] ::1:57707 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:45] ::1:57707 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:25:45] ::1:57707 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:25:46] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:25:46] ::1:57707 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:17] ::1:57715 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:17] ::1:57715 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:17] ::1:57715 - "GET /api/v1 HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:23] ::1:57719 - "GET /api/v1/collections/bistro?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:23] ::1:57719 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/get HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:23] ::1:57719 - "GET /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/count HTTP/1.1" 200
+[32mINFO[0m:     [03-04-2024 16:26:23] ::1:57719 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [03-04-2024 16:26:23] Number of requested results 20 is greater than number of elements in index 8, updating n_results = 8
+[32mINFO[0m:     [03-04-2024 16:26:23] ::1:57719 - "POST /api/v1/collections/06875238-8eed-4d22-9271-185ad0411373/query HTTP/1.1" 200

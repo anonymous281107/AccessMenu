@@ -54,7 +54,7 @@ export default function Drawer({ open, toggleDrawer }) {
         >
           <AppLogo />
           <Typography variant="h5" sx={{ color: "#ffffff", fontWeight: 700 }}>
-            Taste of India
+            Access Menu
           </Typography>
         </Box>
         <Divider />

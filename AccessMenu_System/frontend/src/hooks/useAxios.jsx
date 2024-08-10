@@ -9,7 +9,7 @@ const client = axios.create({
     baseURL: API_BASE_URL,
     headers: {
         // "Content-Type": "application/json",
-        platform: "Taste-Of-India-PWA",
+        platform: "Access Menu",
     },
 })
 

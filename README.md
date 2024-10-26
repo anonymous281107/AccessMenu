@@ -1,3 +1,3 @@
 # AccessMenu
-Accessibility of Online Restaurant Menus for Blind Screen Reader Users
+Making Online Restaurant Menus More Perusable for Blind Screen Reader Users
  
